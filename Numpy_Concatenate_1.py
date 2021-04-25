@@ -17,3 +17,22 @@ print(L1)
 arr1 = np.array(L1)
 arr2 = np.array(L2)
 print(np.concatenate((arr1,arr2)))
+
+# Sample Input
+# 4 3 2
+# 1 2
+# 1 2 
+# 1 2
+# 1 2
+# 3 4
+# 3 4
+# 3 4 
+
+# Sample Output
+# [[1 2]
+#  [1 2]
+#  [1 2]
+#  [1 2]
+#  [3 4]
+#  [3 4]
+#  [3 4]] 
