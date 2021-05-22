@@ -1,0 +1,28 @@
+def person_lister(name_format):
+    def inner(people):
+        # complete the function
+        people.sort(key=lambda x: int(x[2]))
+        # sorted(people,key=lambda x: int(x[2]))
+        print(people)
+        return map(name_format, people)
+    return inner
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print('\n'.join(name_format(people)))
+
+
+# input
+# 3
+# Mike Thomson 20 M
+# Robert Bustle 32 M
+# Andria Bustle 30 F
+#
+# output
+# Mr. Mike Thomson
+# Ms. Andria Bustle
+# Mr. Robert Bustle
