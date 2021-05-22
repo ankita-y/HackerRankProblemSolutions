@@ -1,0 +1,40 @@
+#Method 1 - with find()
+def count_substring(string, sub_string):
+    count_occurance = 0
+    for word in string:
+        if word.find(sub_string) > 0:
+            count_occurance += 1
+            #print(word)
+    return count_occurance
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+
+    count = count_substring(string, sub_string)
+    print(count)
+
+# input
+# ABCDCDC
+# CDC
+# output
+# 2
+
+#Method 2 - using startswith
+txt = 'Bootcampxobinaokgo'
+sub = 'xobin'
+
+for i in range(len(txt)):
+   if txt[i:].startswith(sub):
+       print(i)
+
+#Method 3 - without find()
+def index(s, sub):
+    for i in range(len(s)):
+        if s[i] == sub[0]:
+            end = i + len(sub)
+
+            if s[i:end] == sub:
+                print(i)
+
+index('Bootcampxobinaokgo','xobin')
